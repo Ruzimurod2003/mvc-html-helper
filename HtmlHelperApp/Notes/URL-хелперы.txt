@@ -1,0 +1,12 @@
+﻿Action
+Content
+RouteUrl
+-------------------------------------------------------------------------------------
+@Url.Action("GetUser", "Home", new { name = "Тоm", id = 10 }, null)
+
+<a href='@Url.Action("GetUser", "Home", new { name = "Тоm", id = 10 }, null)'>Ссылка</a>
+
+@Url.RouteUrl(new { controller = "Home", action = "GetUser", name = "Tom", id = 10 })
+
+<script src='@Url.Content("~/lib/jquery/dist/jquery.js")'></script>
+-------------------------------------------------------------------------------------

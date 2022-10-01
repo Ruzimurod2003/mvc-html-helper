@@ -1,0 +1,23 @@
+﻿Html.ActionLink
+-------------------------------------------------------------------------------------
+@Html.ActionLink("О сайте", "About")
+<a href="/Home/About">О сайте</a>
+
+@Html.ActionLink("Sam", "GetUser", "Home", new { name = "Sam", id = 12 }, new { id = "sam", @class = "link" })	
+<a class="link" href="/Home/GetUser/12?name=Sam" id="sam">Sam</a>
+-------------------------------------------------------------------------------------
+
+Html.RouteLink
+-------------------------------------------------------------------------------------
+@Html.RouteLink("Sam", new { controller = "Home", action = "GetUser", name = "Sam", id = 12 }, new { id = "sam", @class = "link" })
+	
+@Html.RouteLink("Все пользователи","Default",new { action = "UsersList" })
+<a href="/Home/UsersList">Все пользователи</a>
+
+@Html.RouteLink("Все книги", new { action = "Index", controller="Home" })
+<a href="/Store/SubIndex">Все книги</a>
+
+[Route("api/[controller]/[action]")]	
+@Html.ActionLink("Home", "Index", "Home")
+http://localhost:55994/api/Home/Index
+-------------------------------------------------------------------------------------

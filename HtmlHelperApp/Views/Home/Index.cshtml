@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model AllProcess;
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.Label("Name", "Имя")
+    <br />
+    @Html.TextBox("Price", new { type="number" })
+    <br />
+    @Html.TextArea("text", "привет мир")
+    <br />
+    @Html.Hidden("UserId", "2")
+    <br />
+    @Html.Password("UserPassword", "val")
+    <br />
+    @Html.Password("UserPassword", "val")
+    <span>красный</span>
+    <br />
+    @Html.CheckBox("Enable", false)
+    <br />
+    @Html.DropDownList("user", new SelectList(new string[] { "Tom", "Sam", "Bob", "Alice" }), "Выберите пользователя")
+    <br />
+    @Html.ListBox("users", new MultiSelectList(new string[] { "Tom", "Sam", "Bob", "Alice" }),new{ @class="selectpicker" })
+    <br />
+    @Html.HiddenFor(m=> m.Id)
+    <br />
+    @Html.CheckBoxFor(m=>m.Enable, false)
+    <br />
+    @Html.LabelFor(m => m.Name,"Имя")
+    <br />
+    @Html.PasswordFor(m => m.Password)
+    <br />
+    @Html.RadioButtonFor(m => m.Option, "val")
+    <br />
+    @Html.TextBoxFor(m => m.Name)
+    <br />
+    @Html.TextAreaFor(m => m.Name,10,9,null)
+    <br />
+    <input type="submit" value="Отправить" />
+}
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+    @Html.DropDownList("daytime", Html.GetEnumSelectList(typeof(TimeOfDay)))
+    <br />
+    <p>
+        <input type="submit" value="Отправить" />
+    </p>
+}
